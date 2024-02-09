@@ -23,7 +23,7 @@ export default function Home() {
     }, [pizzasFromState, setPizzas]);
 
     function Pizzas() {
-        const filteredPizzas = pizzasFromState.filter(() => {
+        const filteredPizzas = pizzasFromState.filter((pizza) => {
             return pizza.name.toLowerCase().includes(filterText);
         });
 
@@ -53,7 +53,7 @@ export default function Home() {
                 <input
                     type="search"
                     name="search"
-                    data-test-id="search"
+                    data-testid="search"
                     onChange={(event) => {
                         setFilterText(event.target.value);
                     }}
